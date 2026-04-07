@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Detail Page</title>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+
+    <!-- Navbar -->
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <p class="hero-sub">Premium Quality</p>
+      <h1 class="hero-title">Widgets</h1>
+      <p class="hero-desc">
+        Genuine, precision-crafted technology for modern living
+      </p>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="product-section">
+      <div class="product-image">
+        <img
+          src="https://imageio.forbes.com/blogs-images/tiriasresearch/files/2018/08/Vector_Product_003_noLogo-1200x675.jpg?height=399&width=711&fit=bounds"
+          alt="Super Widget"
+        />
+      </div>
+      <div class="product-info">
+        <h1 id="product-name">Super Widget</h1>
+        <br />
+        <span class="badge">In Stock</span>
+        <p class="product-meta">SKU: SW-001 &nbsp;|&nbsp; Category: Widgets</p>
+
+        <div class="price-row">
+          <span class="price-label">Price</span>
+          <span id="product-price" class="price-value">19.99</span>
+        </div>
+
+        <hr class="divider" />
+
+        <button class="btn btn-primary" id="send-api-btn">
+          Send Product to API
+        </button>
+        <p id="api-status"></p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-col">
+        <div class="footer-brand">Widgets</div>
+        <div class="footer-tagline">Premium Quality, Unmatched Performance</div>
+      </div>
+
+      <div class="footer-bottom">© 2026 Widgets - Rachana Vannala</div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
