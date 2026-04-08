@@ -1,11 +1,16 @@
 // Task 1: Push product data to GTM dataLayer on page load
 window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: "productView",
-  productName: document.getElementById("product-name").innerText,
-  productPrice: parseFloat(document.getElementById("product-price").innerText),
-});
-console.log("dataLayer after push:", window.dataLayer);
+// ✅ ERROR HANDLING: Check if DOM elements exist before scraping
+if (!document.getElementById("product-name") || !document.getElementById("product-price")) {
+  console.error("GTM Error: product-name or product-price element not found in DOM.");
+} else {
+  window.dataLayer.push({
+    event: "productView",
+    productName: document.getElementById("product-name").innerText,
+    productPrice: parseFloat(document.getElementById("product-price").innerText),
+  });
+  console.log("dataLayer after push:", window.dataLayer);
+}
 // Task 2: Button click sends POST to httpbin.org using dataLayer values
 document.getElementById("send-api-btn").addEventListener("click", function () {
   const dlData = window.dataLayer.find((e) => e.event === "productView");
@@ -25,7 +30,7 @@ document.getElementById("send-api-btn").addEventListener("click", function () {
     body: JSON.stringify(payload),
   })
     .then((res) => {
-      // ✅ ERROR HANDLING: fetch won't auto-reject on 4xx/5xx
+      // ✅ ERROR HANDLING: fetch won't auto-reject on 4xx/5xx — check manually
       if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
       return res.json();
     })
