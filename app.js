@@ -3,7 +3,7 @@ window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: "productView",
   productName: document.getElementById("product-name").innerText,
-  productPrice: document.getElementById("product-price").innerText,
+  productPrice: parseFloat(document.getElementById("product-price").innerText), // Added parseFloat() here
 });
 console.log("dataLayer after push:", window.dataLayer);
 
