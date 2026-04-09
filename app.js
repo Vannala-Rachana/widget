@@ -24,7 +24,6 @@ if (!document.getElementById("product-name") || !document.getElementById("produc
 // Task 2: Button click sends POST to httpbin.org using GTM dataLayer values
 document.getElementById("send-api-btn").addEventListener("click", function () {
 
-  // ✅ CHANGED: Fetch directly from GTM's internal data layer object
   const gtmContainer = google_tag_manager["GTM-M5FGW9XC"];
   const productName = gtmContainer.dataLayer.get("productName");
   const productPrice = gtmContainer.dataLayer.get("productPrice");
