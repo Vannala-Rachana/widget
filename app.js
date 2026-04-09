@@ -34,12 +34,11 @@ document.getElementById("send-api-btn").addEventListener("click", function () {
     document.getElementById("api-status").textContent = "API call failed. Product data missing from GTM dataLayer.";
     return;
   }
-
   const payload = {
     productName: productName,
     productPrice: productPrice,
   };
-
+  console.log("Sending the product name and price stored in the GTM data layer to API /n", payload);
   fetch("https://httpbin.org/post", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
