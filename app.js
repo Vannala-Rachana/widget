@@ -13,8 +13,10 @@ if (!document.getElementById("product-name") || !document.getElementById("produc
   } else {
     window.dataLayer.push({
       event: "productView",
-      productName: document.getElementById("product-name").innerText,
-      productPrice: parsedPrice,
+      //productName: document.getElementById("product-name").innerText,
+      productName: "abcd",  // test random data 
+      //productPrice: parsedPrice,
+      productPrice: parsedPrice+10, // test 10 ten 
     });
     console.log("dataLayer after push:", window.dataLayer);
   }
