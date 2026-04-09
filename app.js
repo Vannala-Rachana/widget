@@ -13,10 +13,9 @@ if (!document.getElementById("product-name") || !document.getElementById("produc
   } else {
     window.dataLayer.push({
       event: "productView",
-      //productName: document.getElementById("product-name").innerText,
-      productName: "abcd",  // test random data 
-      //productPrice: parsedPrice,
-      productPrice: parsedPrice+10, // test 10 ten 
+      productName: document.getElementById("product-name").innerText, 
+      productPrice: parsedPrice,
+     
     });
     console.log("dataLayer after push:", window.dataLayer);
   }
@@ -40,7 +39,7 @@ document.getElementById("send-api-btn").addEventListener("click", function () {
     productName: productName,
     productPrice: productPrice,
   };
-  console.log("Sending the product name and price stored in the GTM data layer to API /n", payload);
+  console.log("Sending the product name and price stored in the GTM data layer to API ");
   fetch("https://httpbin.org/post", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
